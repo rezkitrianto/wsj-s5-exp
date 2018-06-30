@@ -1,0 +1,953 @@
+local/nnet3/run_tdnn_blstm2_3layers.sh 
+local/nnet3/run_tdnn_blstm2_3layers.sh: creating neural net configs using the xconfig parser
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tri5_7d_tree_sp/tree 
+nnet3-init /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.config /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw 
+LOG (nnet3-init[5.1.0-]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw
+nnet3-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw 
+nnet3-init /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.config /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw 
+LOG (nnet3-init[5.1.0-]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw
+nnet3-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs//ref.raw 
+steps/nnet3/xconfig_to_configs.py --xconfig-file /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs/network.xconfig --config-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/configs/
+2017-06-27 12:10:19,514 [steps/nnet3/chain/train.py:33 - <module> - INFO ] Starting chain model trainer (train.py)
+2017-06-27 12:10:19,520 [steps/nnet3/chain/train.py:258 - train - INFO ] Arguments for the experiment
+{'alignment_subsampling_factor': 3,
+ 'apply_deriv_weights': False,
+ 'chunk_left_context': 40,
+ 'chunk_left_context_initial': -1,
+ 'chunk_right_context': 40,
+ 'chunk_right_context_final': -1,
+ 'chunk_width': '150',
+ 'cleanup': True,
+ 'cmvn_opts': '--norm-means=false --norm-vars=false',
+ 'combine_sum_to_one_penalty': 0.0,
+ 'command': 'run.pl',
+ 'deriv_truncate_margin': 8,
+ 'dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector',
+ 'dropout_schedule': '0,0@0.20,0.1@0.50,0',
+ 'egs_command': 'queue.pl',
+ 'egs_dir': None,
+ 'egs_opts': '--frames-overlap-per-eg 0',
+ 'egs_stage': -10,
+ 'email': None,
+ 'exit_stage': None,
+ 'feat_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy',
+ 'final_effective_lrate': 0.0001,
+ 'frame_subsampling_factor': 3,
+ 'frames_per_iter': 1200000,
+ 'initial_effective_lrate': 0.001,
+ 'l2_regularize': 5e-05,
+ 'lat_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp',
+ 'leaky_hmm_coefficient': 0.1,
+ 'left_deriv_truncate': None,
+ 'left_tolerance': 5,
+ 'lm_opts': '--num-extra-lm-states=2000',
+ 'max_lda_jobs': 10,
+ 'max_models_combine': 20,
+ 'max_param_change': 2.0,
+ 'momentum': 0.0,
+ 'num_chunk_per_minibatch': '32',
+ 'num_epochs': 4.0,
+ 'num_jobs_final': 1,
+ 'num_jobs_initial': 1,
+ 'online_ivector_dir': None,
+ 'preserve_model_interval': 100,
+ 'presoftmax_prior_scale_power': -0.25,
+ 'rand_prune': 4.0,
+ 'remove_egs': False,
+ 'reporting_interval': 0.1,
+ 'right_tolerance': 5,
+ 'samples_per_iter': 400000,
+ 'shrink_saturation_threshold': 0.4,
+ 'shrink_value': 0.99,
+ 'shuffle_buffer_size': 5000,
+ 'srand': 0,
+ 'stage': -10,
+ 'transform_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp',
+ 'tree_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tri5_7d_tree_sp',
+ 'use_gpu': True,
+ 'xent_regularize': 0.025}
+2017-06-27 12:10:19,804 [steps/nnet3/chain/train.py:303 - train - INFO ] Creating phone language-model
+2017-06-27 12:10:28,055 [steps/nnet3/chain/train.py:308 - train - INFO ] Creating denominator FST
+copy-transition-model /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tri5_7d_tree_sp/final.mdl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/0.trans_mdl 
+LOG (copy-transition-model[5.1.0-]:main():copy-transition-model.cc:62) Copied transition model.
+2017-06-27 12:10:32,520 [steps/nnet3/chain/train.py:332 - train - INFO ] Generating egs
+steps/nnet3/chain/get_egs.sh --frames-overlap-per-eg 0 --cmd run.pl --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --transform-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp --online-ivector-dir  --left-context 43 --right-context 43 --left-context-initial -1 --right-context-final -1 --left-tolerance 5 --right-tolerance 5 --frame-subsampling-factor 3 --alignment-subsampling-factor 3 --stage -10 --frames-per-iter 1200000 --frames-per-eg 150 --srand 0 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/egs
+feat-to-len 'scp:head -n 10 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy/feats.scp|' ark,t:- 
+utils/data/get_utt2dur.sh: /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy/utt2dur already exists with the expected length.  We won't recompute it.
+steps/nnet3/chain/get_egs.sh: feature type is raw
+steps/nnet3/chain/get_egs.sh: working out number of frames of training data
+feat-to-len 'scp:head -n 10 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy/feats.scp|' ark,t:- 
+steps/nnet3/chain/get_egs.sh: working out feature dim
+steps/nnet3/chain/get_egs.sh: creating 33 archives, each with 7880 egs, with
+steps/nnet3/chain/get_egs.sh:   150 labels per example, and (left,right) context = (43,43)
+steps/nnet3/chain/get_egs.sh: copying training lattices
+steps/nnet3/chain/get_egs.sh: Getting validation and training subset examples.
+steps/nnet3/chain/get_egs.sh: ... extracting validation and training-subset alignments.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet3/chain/get_egs.sh: Generating training examples on disk
+steps/nnet3/chain/get_egs.sh: recombining and shuffling order of archives on disk
+steps/nnet3/chain/get_egs.sh: removing temporary archives
+steps/nnet3/chain/get_egs.sh: removing temporary lattices
+steps/nnet3/chain/get_egs.sh: removing temporary alignments and transforms
+steps/nnet3/chain/get_egs.sh: Finished preparing training examples
+2017-06-27 12:53:53,278 [steps/libs/nnet3/train/common.py:351 - verify_egs_dir - WARNING ] The ivector ids are not used. It's your responsibility to make sure the ivector extractor has been used consistently
+2017-06-27 12:53:53,278 [steps/nnet3/chain/train.py:376 - train - INFO ] Copying the properties from /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/egs to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector
+2017-06-27 12:53:53,285 [steps/nnet3/chain/train.py:388 - train - INFO ] Preparing the initial acoustic model.
+2017-06-27 12:53:58,237 [steps/nnet3/chain/train.py:424 - train - INFO ] Training will run for 4.0 epochs = 396 iterations
+2017-06-27 12:53:58,237 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 0)
+2017-06-27 12:53:58,239 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 0, learning rate is 0.001 and shrink value is 0.99.
+2017-06-27 12:57:49,333 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 1)
+2017-06-27 12:57:49,336 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 1, learning rate is 0.0009942022633.
+2017-06-27 13:00:33,625 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 2)
+2017-06-27 13:00:33,629 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 2, learning rate is 0.00098843814035.
+2017-06-27 13:03:16,189 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 3)
+2017-06-27 13:03:16,192 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 3, learning rate is 0.000982707436268.
+2017-06-27 13:05:57,170 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 4)
+2017-06-27 13:05:57,173 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 4, learning rate is 0.000977009957299.
+2017-06-27 13:08:40,055 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 5)
+2017-06-27 13:08:40,059 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 5, learning rate is 0.000971345510813.
+2017-06-27 13:11:23,902 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 6)
+2017-06-27 13:11:23,906 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 6, learning rate is 0.000965713905297.
+2017-06-27 13:14:16,771 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 7)
+2017-06-27 13:14:16,777 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 7, learning rate is 0.000960114950346.
+2017-06-27 13:17:02,296 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 8)
+2017-06-27 13:17:02,301 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 8, learning rate is 0.000954548456662.
+2017-06-27 13:19:46,272 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 9)
+2017-06-27 13:19:46,276 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 9, learning rate is 0.000949014236042.
+2017-06-27 13:22:31,295 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 10)
+2017-06-27 13:22:31,299 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 10, learning rate is 0.000943512101377.
+2017-06-27 13:25:16,633 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 11)
+2017-06-27 13:25:16,637 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 11, learning rate is 0.00093804186664.
+2017-06-27 13:27:58,816 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 12)
+2017-06-27 13:27:58,820 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 12, learning rate is 0.000932603346883.
+2017-06-27 13:30:46,560 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 13)
+2017-06-27 13:30:46,564 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 13, learning rate is 0.000927196358232.
+2017-06-27 13:33:36,253 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 14)
+2017-06-27 13:33:36,256 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 14, learning rate is 0.000921820717878.
+2017-06-27 13:36:19,454 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 15)
+2017-06-27 13:36:19,457 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 15, learning rate is 0.000916476244071.
+2017-06-27 13:38:57,891 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 16)
+2017-06-27 13:38:57,896 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 16, learning rate is 0.000911162756115.
+2017-06-27 13:41:42,080 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 17)
+2017-06-27 13:41:42,083 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 17, learning rate is 0.000905880074364.
+2017-06-27 13:44:25,766 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 18)
+2017-06-27 13:44:25,770 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 18, learning rate is 0.000900628020211.
+2017-06-27 13:47:08,388 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 19)
+2017-06-27 13:47:08,392 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 19, learning rate is 0.000895406416085.
+2017-06-27 13:49:52,887 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 20)
+2017-06-27 13:49:52,890 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 20, learning rate is 0.000890215085445.
+2017-06-27 13:53:21,505 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 21)
+2017-06-27 13:53:21,508 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 21, learning rate is 0.000885053852773.
+2017-06-27 13:56:06,614 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 22)
+2017-06-27 13:56:06,618 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 22, learning rate is 0.000879922543569.
+2017-06-27 13:58:51,507 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 23)
+2017-06-27 13:58:51,511 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 23, learning rate is 0.000874820984345.
+2017-06-27 14:01:36,963 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 24)
+2017-06-27 14:01:36,967 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 24, learning rate is 0.000869749002618.
+2017-06-27 14:04:19,391 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 25)
+2017-06-27 14:04:19,395 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 25, learning rate is 0.000864706426905.
+2017-06-27 14:07:02,024 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 26)
+2017-06-27 14:07:02,028 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 26, learning rate is 0.000859693086719.
+2017-06-27 14:09:43,402 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 27)
+2017-06-27 14:09:43,406 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 27, learning rate is 0.000854708812559.
+2017-06-27 14:12:22,860 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 28)
+2017-06-27 14:12:22,864 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 28, learning rate is 0.000849753435909.
+2017-06-27 14:15:06,564 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 29)
+2017-06-27 14:15:06,568 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 29, learning rate is 0.000844826789227.
+2017-06-27 14:17:47,653 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 30)
+2017-06-27 14:17:47,657 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 30, learning rate is 0.000839928705946.
+2017-06-27 14:20:29,925 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 31)
+2017-06-27 14:20:29,928 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 31, learning rate is 0.000835059020462.
+2017-06-27 14:23:14,641 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 32)
+2017-06-27 14:23:14,645 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 32, learning rate is 0.000830217568132.
+2017-06-27 14:25:57,355 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 33)
+2017-06-27 14:25:57,359 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 33, learning rate is 0.000825404185268.
+2017-06-27 14:28:42,687 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 34)
+2017-06-27 14:28:42,691 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 34, learning rate is 0.000820618709131.
+2017-06-27 14:31:25,594 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 35)
+2017-06-27 14:31:25,598 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 35, learning rate is 0.000815860977924.
+2017-06-27 14:34:06,964 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 36)
+2017-06-27 14:34:06,968 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 36, learning rate is 0.00081113083079.
+2017-06-27 14:36:51,321 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 37)
+2017-06-27 14:36:51,326 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 37, learning rate is 0.000806428107803.
+2017-06-27 14:39:32,760 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 38)
+2017-06-27 14:39:32,764 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 38, learning rate is 0.000801752649967.
+2017-06-27 14:42:13,293 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 39)
+2017-06-27 14:42:13,298 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 39, learning rate is 0.000797104299203.
+2017-06-27 14:44:55,599 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 40)
+2017-06-27 14:44:55,606 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 40, learning rate is 0.000792482898354.
+2017-06-27 14:48:21,622 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 41)
+2017-06-27 14:48:21,626 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 41, learning rate is 0.00078788829117.
+2017-06-27 14:51:03,659 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 42)
+2017-06-27 14:51:03,663 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 42, learning rate is 0.000783320322308.
+2017-06-27 14:53:49,223 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 43)
+2017-06-27 14:53:49,227 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 43, learning rate is 0.000778778837328.
+2017-06-27 14:56:30,867 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 44)
+2017-06-27 14:56:30,871 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 44, learning rate is 0.000774263682681.
+2017-06-27 14:59:09,951 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 45)
+2017-06-27 14:59:09,956 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 45, learning rate is 0.000769774705712.
+2017-06-27 15:01:56,104 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 46)
+2017-06-27 15:01:56,108 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 46, learning rate is 0.00076531175465.
+2017-06-27 15:04:37,831 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 47)
+2017-06-27 15:04:37,835 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 47, learning rate is 0.000760874678603.
+2017-06-27 15:07:19,349 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 48)
+2017-06-27 15:07:19,353 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 48, learning rate is 0.000756463327555.
+2017-06-27 15:09:58,074 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 49)
+2017-06-27 15:09:58,078 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 49, learning rate is 0.000752077552358.
+2017-06-27 15:12:40,333 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 50)
+2017-06-27 15:12:40,337 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 50, learning rate is 0.000747717204731.
+2017-06-27 15:15:23,507 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 51)
+2017-06-27 15:15:23,511 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 51, learning rate is 0.000743382137252.
+2017-06-27 15:18:08,374 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 52)
+2017-06-27 15:18:08,378 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 52, learning rate is 0.000739072203353.
+2017-06-27 15:20:50,850 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 53)
+2017-06-27 15:20:50,853 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 53, learning rate is 0.000734787257315.
+2017-06-27 15:23:30,201 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 54)
+2017-06-27 15:23:30,205 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 54, learning rate is 0.000730527154266.
+2017-06-27 15:26:15,282 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 55)
+2017-06-27 15:26:15,287 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 55, learning rate is 0.000726291750174.
+2017-06-27 15:28:54,956 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 56)
+2017-06-27 15:28:54,959 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 56, learning rate is 0.000722080901839.
+2017-06-27 15:31:36,770 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 57)
+2017-06-27 15:31:36,775 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 57, learning rate is 0.000717894466893.
+2017-06-27 15:34:21,435 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 58)
+2017-06-27 15:34:21,439 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 58, learning rate is 0.000713732303796.
+2017-06-27 15:37:01,942 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 59)
+2017-06-27 15:37:01,946 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 59, learning rate is 0.000709594271824.
+2017-06-27 15:39:42,589 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 60)
+2017-06-27 15:39:42,593 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 60, learning rate is 0.000705480231072.
+2017-06-27 15:43:13,626 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 61)
+2017-06-27 15:43:13,629 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 61, learning rate is 0.000701390042445.
+2017-06-27 15:45:54,952 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 62)
+2017-06-27 15:45:54,956 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 62, learning rate is 0.000697323567655.
+2017-06-27 15:48:36,592 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 63)
+2017-06-27 15:48:36,595 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 63, learning rate is 0.000693280669214.
+2017-06-27 15:51:21,923 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 64)
+2017-06-27 15:51:21,927 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 64, learning rate is 0.000689261210435.
+2017-06-27 15:54:04,387 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 65)
+2017-06-27 15:54:04,393 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 65, learning rate is 0.000685265055419.
+2017-06-27 15:56:46,341 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 66)
+2017-06-27 15:56:46,350 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 66, learning rate is 0.000681292069058.
+2017-06-27 15:59:29,730 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 67)
+2017-06-27 15:59:29,735 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 67, learning rate is 0.000677342117026.
+2017-06-27 16:02:12,135 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 68)
+2017-06-27 16:02:12,139 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 68, learning rate is 0.000673415065775.
+2017-06-27 16:04:55,801 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 69)
+2017-06-27 16:04:55,805 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 69, learning rate is 0.000669510782534.
+2017-06-27 16:07:37,416 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 70)
+2017-06-27 16:07:37,421 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 70, learning rate is 0.000665629135299.
+2017-06-27 16:10:18,833 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 71)
+2017-06-27 16:10:18,837 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 71, learning rate is 0.000661769992832.
+2017-06-27 16:13:01,627 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 72)
+2017-06-27 16:13:01,631 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 72, learning rate is 0.000657933224658.
+2017-06-27 16:15:42,216 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 73)
+2017-06-27 16:15:42,220 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 73, learning rate is 0.000654118701055.
+2017-06-27 16:18:21,966 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 74)
+2017-06-27 16:18:21,970 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 74, learning rate is 0.000650326293055.
+2017-06-27 16:21:06,034 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 75)
+2017-06-27 16:21:06,038 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 75, learning rate is 0.000646555872439.
+2017-06-27 16:23:49,294 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 76)
+2017-06-27 16:23:49,298 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 76, learning rate is 0.000642807311728.
+2017-06-27 16:26:30,471 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 77)
+2017-06-27 16:26:30,476 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 77, learning rate is 0.000639080484186.
+2017-06-27 16:29:11,880 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 78)
+2017-06-27 16:29:11,884 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 78, learning rate is 0.000635375263808.
+2017-06-27 16:31:56,083 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 79)
+2017-06-27 16:31:56,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 79, learning rate is 0.000631691525323.
+2017-06-27 16:34:38,249 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 80)
+2017-06-27 16:34:38,254 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 80, learning rate is 0.000628029144183.
+2017-06-27 16:38:11,679 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 81)
+2017-06-27 16:38:11,682 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 81, learning rate is 0.000624387996565.
+2017-06-27 16:40:47,438 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 82)
+2017-06-27 16:40:47,442 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 82, learning rate is 0.000620767959362.
+2017-06-27 16:43:28,954 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 83)
+2017-06-27 16:43:28,957 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 83, learning rate is 0.000617168910182.
+2017-06-27 16:46:14,151 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 84)
+2017-06-27 16:46:14,154 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 84, learning rate is 0.000613590727341.
+2017-06-27 16:48:56,707 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 85)
+2017-06-27 16:48:56,712 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 85, learning rate is 0.000610033289862.
+2017-06-27 16:51:39,126 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 86)
+2017-06-27 16:51:39,130 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 86, learning rate is 0.000606496477469.
+2017-06-27 16:54:20,879 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 87)
+2017-06-27 16:54:20,883 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 87, learning rate is 0.000602980170583.
+2017-06-27 16:57:04,914 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 88)
+2017-06-27 16:57:04,917 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 88, learning rate is 0.000599484250319.
+2017-06-27 16:59:44,866 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 89)
+2017-06-27 16:59:44,870 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 89, learning rate is 0.00059600859848.
+2017-06-27 17:02:28,498 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 90)
+2017-06-27 17:02:28,502 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 90, learning rate is 0.000592553097555.
+2017-06-27 17:05:10,647 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 91)
+2017-06-27 17:05:10,651 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 91, learning rate is 0.000589117630714.
+2017-06-27 17:07:51,500 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 92)
+2017-06-27 17:07:51,504 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 92, learning rate is 0.000585702081806.
+2017-06-27 17:10:35,168 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 93)
+2017-06-27 17:10:35,173 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 93, learning rate is 0.000582306335351.
+2017-06-27 17:13:15,470 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 94)
+2017-06-27 17:13:15,474 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 94, learning rate is 0.000578930276539.
+2017-06-27 17:15:57,585 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 95)
+2017-06-27 17:15:57,590 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 95, learning rate is 0.000575573791228.
+2017-06-27 17:18:41,431 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 96)
+2017-06-27 17:18:41,435 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 96, learning rate is 0.000572236765935.
+2017-06-27 17:21:23,519 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 97)
+2017-06-27 17:21:23,523 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 97, learning rate is 0.000568919087836.
+2017-06-27 17:24:06,231 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 98)
+2017-06-27 17:24:06,235 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 98, learning rate is 0.000565620644761.
+2017-06-27 17:26:50,217 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 99)
+2017-06-27 17:26:50,220 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 99, learning rate is 0.00056234132519.
+2017-06-27 17:29:33,782 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 100)
+2017-06-27 17:29:33,787 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 100, learning rate is 0.000559081018251.
+2017-06-27 17:33:08,268 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 101)
+2017-06-27 17:33:08,272 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 101, learning rate is 0.000555839613713.
+2017-06-27 17:35:50,090 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 102)
+2017-06-27 17:35:50,094 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 102, learning rate is 0.000552617001985.
+2017-06-27 17:38:31,809 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 103)
+2017-06-27 17:38:31,813 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 103, learning rate is 0.000549413074112.
+2017-06-27 17:41:16,007 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 104)
+2017-06-27 17:41:16,010 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 104, learning rate is 0.000546227721768.
+2017-06-27 17:43:57,905 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 105)
+2017-06-27 17:43:57,909 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 105, learning rate is 0.000543060837259.
+2017-06-27 17:46:39,200 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 106)
+2017-06-27 17:46:39,204 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 106, learning rate is 0.000539912313513.
+2017-06-27 17:49:20,209 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 107)
+2017-06-27 17:49:20,213 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 107, learning rate is 0.000536782044078.
+2017-06-27 17:52:02,846 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 108)
+2017-06-27 17:52:02,850 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 108, learning rate is 0.000533669923121.
+2017-06-27 17:54:46,542 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 109)
+2017-06-27 17:54:46,545 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 109, learning rate is 0.000530575845422.
+2017-06-27 17:57:30,722 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 110)
+2017-06-27 17:57:30,726 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 110, learning rate is 0.00052749970637.
+2017-06-27 18:00:10,219 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 111)
+2017-06-27 18:00:10,222 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 111, learning rate is 0.000524441401963.
+2017-06-27 18:02:55,671 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 112)
+2017-06-27 18:02:55,678 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 112, learning rate is 0.0005214008288.
+2017-06-27 18:05:41,495 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 113)
+2017-06-27 18:05:41,499 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 113, learning rate is 0.000518377884079.
+2017-06-27 18:08:23,251 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 114)
+2017-06-27 18:08:23,255 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 114, learning rate is 0.000515372465596.
+2017-06-27 18:11:00,194 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 115)
+2017-06-27 18:11:00,198 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 115, learning rate is 0.000512384471738.
+2017-06-27 18:13:43,592 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 116)
+2017-06-27 18:13:43,595 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 116, learning rate is 0.000509413801482.
+2017-06-27 18:16:27,068 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 117)
+2017-06-27 18:16:27,072 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 117, learning rate is 0.000506460354389.
+2017-06-27 18:19:09,893 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 118)
+2017-06-27 18:19:09,898 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 118, learning rate is 0.000503524030605.
+2017-06-27 18:21:54,204 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 119)
+2017-06-27 18:21:54,208 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 119, learning rate is 0.000500604730854.
+2017-06-27 18:24:34,204 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 120)
+2017-06-27 18:24:34,210 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 120, learning rate is 0.000497702356433.
+2017-06-27 18:28:07,375 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 121)
+2017-06-27 18:28:07,379 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 121, learning rate is 0.000494816809216.
+2017-06-27 18:30:49,045 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 122)
+2017-06-27 18:30:49,053 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 122, learning rate is 0.000491947991641.
+2017-06-27 18:33:30,993 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 123)
+2017-06-27 18:33:30,998 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 123, learning rate is 0.000489095806715.
+2017-06-27 18:36:13,709 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 124)
+2017-06-27 18:36:13,713 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 124, learning rate is 0.000486260158007.
+2017-06-27 18:38:56,427 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 125)
+2017-06-27 18:38:56,431 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 125, learning rate is 0.000483440949643.
+2017-06-27 18:41:37,621 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 126)
+2017-06-27 18:41:37,625 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 126, learning rate is 0.000480638086306.
+2017-06-27 18:44:18,020 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 127)
+2017-06-27 18:44:18,027 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 127, learning rate is 0.000477851473234.
+2017-06-27 18:47:02,860 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 128)
+2017-06-27 18:47:02,864 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 128, learning rate is 0.00047508101621.
+2017-06-27 18:49:44,547 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 129)
+2017-06-27 18:49:44,551 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 129, learning rate is 0.000472326621567.
+2017-06-27 18:52:27,044 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 130)
+2017-06-27 18:52:27,048 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 130, learning rate is 0.000469588196179.
+2017-06-27 18:55:12,156 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 131)
+2017-06-27 18:55:12,160 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 131, learning rate is 0.00046686564746.
+2017-06-27 18:57:54,395 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 132)
+2017-06-27 18:57:54,399 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 132, learning rate is 0.000464158883361.
+2017-06-27 19:00:39,557 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 133)
+2017-06-27 19:00:39,560 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 133, learning rate is 0.000461467812368.
+2017-06-27 19:03:21,963 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 134)
+2017-06-27 19:03:21,967 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 134, learning rate is 0.000458792343497.
+2017-06-27 19:06:03,128 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 135)
+2017-06-27 19:06:03,133 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 135, learning rate is 0.000456132386289.
+2017-06-27 19:08:46,123 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 136)
+2017-06-27 19:08:46,127 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 136, learning rate is 0.000453487850813.
+2017-06-27 19:11:27,675 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 137)
+2017-06-27 19:11:27,680 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 137, learning rate is 0.000450858647657.
+2017-06-27 19:14:08,318 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 138)
+2017-06-27 19:14:08,322 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 138, learning rate is 0.000448244687929.
+2017-06-27 19:16:50,908 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 139)
+2017-06-27 19:16:50,912 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 139, learning rate is 0.000445645883251.
+2017-06-27 19:19:29,613 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 140)
+2017-06-27 19:19:29,616 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 140, learning rate is 0.000443062145758.
+2017-06-27 19:23:00,413 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 141)
+2017-06-27 19:23:00,417 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 141, learning rate is 0.000440493388095.
+2017-06-27 19:25:45,146 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 142)
+2017-06-27 19:25:45,151 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 142, learning rate is 0.000437939523413.
+2017-06-27 19:28:26,084 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 143)
+2017-06-27 19:28:26,088 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 143, learning rate is 0.000435400465366.
+2017-06-27 19:31:05,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 144)
+2017-06-27 19:31:05,096 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 144, learning rate is 0.000432876128108.
+2017-06-27 19:33:50,560 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 145)
+2017-06-27 19:33:50,564 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 145, learning rate is 0.000430366426294.
+2017-06-27 19:36:32,164 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 146)
+2017-06-27 19:36:32,167 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 146, learning rate is 0.000427871275069.
+2017-06-27 19:39:12,991 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 147)
+2017-06-27 19:39:12,994 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 147, learning rate is 0.000425390590075.
+2017-06-27 19:41:50,761 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 148)
+2017-06-27 19:41:50,765 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 148, learning rate is 0.000422924287439.
+2017-06-27 19:44:31,985 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 149)
+2017-06-27 19:44:31,988 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 149, learning rate is 0.000420472283776.
+2017-06-27 19:47:15,286 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 150)
+2017-06-27 19:47:15,290 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 150, learning rate is 0.000418034496185.
+2017-06-27 19:49:59,949 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 151)
+2017-06-27 19:49:59,954 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 151, learning rate is 0.000415610842245.
+2017-06-27 19:52:41,452 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 152)
+2017-06-27 19:52:41,455 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 152, learning rate is 0.000413201240012.
+2017-06-27 19:55:21,302 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 153)
+2017-06-27 19:55:21,306 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 153, learning rate is 0.000410805608018.
+2017-06-27 19:58:06,908 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 154)
+2017-06-27 19:58:06,912 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 154, learning rate is 0.000408423865267.
+2017-06-27 20:00:47,259 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 155)
+2017-06-27 20:00:47,263 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 155, learning rate is 0.000406055931235.
+2017-06-27 20:03:28,644 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 156)
+2017-06-27 20:03:28,648 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 156, learning rate is 0.00040370172586.
+2017-06-27 20:06:13,085 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 157)
+2017-06-27 20:06:13,089 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 157, learning rate is 0.000401361169548.
+2017-06-27 20:08:53,609 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 158)
+2017-06-27 20:08:53,613 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 158, learning rate is 0.000399034183165.
+2017-06-27 20:11:34,208 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 159)
+2017-06-27 20:11:34,213 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 159, learning rate is 0.000396720688037.
+2017-06-27 20:14:16,324 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 160)
+2017-06-27 20:14:16,328 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 160, learning rate is 0.000394420605944.
+2017-06-27 20:17:45,949 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 161)
+2017-06-27 20:17:45,952 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 161, learning rate is 0.000392133859121.
+2017-06-27 20:20:27,329 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 162)
+2017-06-27 20:20:27,334 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 162, learning rate is 0.000389860370255.
+2017-06-27 20:23:11,247 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 163)
+2017-06-27 20:23:11,252 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 163, learning rate is 0.000387600062478.
+2017-06-27 20:25:53,603 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 164)
+2017-06-27 20:25:53,607 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 164, learning rate is 0.000385352859371.
+2017-06-27 20:28:35,172 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 165)
+2017-06-27 20:28:35,176 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 165, learning rate is 0.000383118684956.
+2017-06-27 20:31:18,091 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 166)
+2017-06-27 20:31:18,098 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 166, learning rate is 0.000380897463695.
+2017-06-27 20:34:00,345 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 167)
+2017-06-27 20:34:00,349 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 167, learning rate is 0.000378689120491.
+2017-06-27 20:36:43,020 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 168)
+2017-06-27 20:36:43,024 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 168, learning rate is 0.000376493580679.
+2017-06-27 20:39:24,351 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 169)
+2017-06-27 20:39:24,355 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 169, learning rate is 0.000374310770029.
+2017-06-27 20:42:05,437 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 170)
+2017-06-27 20:42:05,441 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 170, learning rate is 0.00037214061474.
+2017-06-27 20:44:48,636 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 171)
+2017-06-27 20:44:48,640 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 171, learning rate is 0.000369983041441.
+2017-06-27 20:47:28,833 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 172)
+2017-06-27 20:47:28,836 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 172, learning rate is 0.000367837977183.
+2017-06-27 20:50:07,482 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 173)
+2017-06-27 20:50:07,486 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 173, learning rate is 0.000365705349443.
+2017-06-27 20:52:51,186 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 174)
+2017-06-27 20:52:51,190 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 174, learning rate is 0.000363585086117.
+2017-06-27 20:55:34,908 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 175)
+2017-06-27 20:55:34,912 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 175, learning rate is 0.000361477115519.
+2017-06-27 20:58:16,485 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 176)
+2017-06-27 20:58:16,489 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 176, learning rate is 0.00035938136638.
+2017-06-27 21:00:57,040 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 177)
+2017-06-27 21:00:57,043 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 177, learning rate is 0.000357297767843.
+2017-06-27 21:03:40,128 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 178)
+2017-06-27 21:03:40,132 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 178, learning rate is 0.000355226249462.
+2017-06-27 21:06:22,670 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 179)
+2017-06-27 21:06:22,674 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 179, learning rate is 0.000353166741198.
+2017-06-27 21:09:06,427 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 180)
+2017-06-27 21:09:06,431 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 180, learning rate is 0.000351119173422.
+2017-06-27 21:12:27,957 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 181)
+2017-06-27 21:12:27,961 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 181, learning rate is 0.000349083476904.
+2017-06-27 21:15:08,370 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 182)
+2017-06-27 21:15:08,374 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 182, learning rate is 0.000347059582818.
+2017-06-27 21:17:53,246 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 183)
+2017-06-27 21:17:53,253 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 183, learning rate is 0.000345047422738.
+2017-06-27 21:20:35,445 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 184)
+2017-06-27 21:20:35,449 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 184, learning rate is 0.000343046928631.
+2017-06-27 21:23:17,533 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 185)
+2017-06-27 21:23:17,537 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 185, learning rate is 0.000341058032863.
+2017-06-27 21:25:59,611 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 186)
+2017-06-27 21:25:59,615 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 186, learning rate is 0.000339080668189.
+2017-06-27 21:28:42,757 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 187)
+2017-06-27 21:28:42,762 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 187, learning rate is 0.000337114767755.
+2017-06-27 21:31:22,747 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 188)
+2017-06-27 21:31:22,752 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 188, learning rate is 0.000335160265094.
+2017-06-27 21:34:06,106 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 189)
+2017-06-27 21:34:06,111 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 189, learning rate is 0.000333217094124.
+2017-06-27 21:36:48,213 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 190)
+2017-06-27 21:36:48,217 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 190, learning rate is 0.000331285189149.
+2017-06-27 21:39:28,919 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 191)
+2017-06-27 21:39:28,923 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 191, learning rate is 0.000329364484849.
+2017-06-27 21:42:11,781 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 192)
+2017-06-27 21:42:11,785 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 192, learning rate is 0.000327454916288.
+2017-06-27 21:44:51,450 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 193)
+2017-06-27 21:44:51,457 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 193, learning rate is 0.000325556418902.
+2017-06-27 21:47:33,340 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 194)
+2017-06-27 21:47:33,344 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 194, learning rate is 0.000323668928504.
+2017-06-27 21:50:17,057 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 195)
+2017-06-27 21:50:17,061 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 195, learning rate is 0.000321792381279.
+2017-06-27 21:52:59,013 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 196)
+2017-06-27 21:52:59,017 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 196, learning rate is 0.00031992671378.
+2017-06-27 21:55:41,768 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 197)
+2017-06-27 21:55:41,772 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 197, learning rate is 0.00031807186293.
+2017-06-27 21:58:26,040 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 198)
+2017-06-27 21:58:26,044 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 198, learning rate is 0.000316227766017.
+2017-06-27 22:01:08,943 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 199)
+2017-06-27 22:01:08,947 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 199, learning rate is 0.000314394360692.
+2017-06-27 22:03:53,199 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 200)
+2017-06-27 22:03:53,205 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 200, learning rate is 0.000312571584969.
+2017-06-27 22:07:22,961 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 201)
+2017-06-27 22:07:22,964 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 201, learning rate is 0.000310759377219.
+2017-06-27 22:10:03,361 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 202)
+2017-06-27 22:10:03,365 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 202, learning rate is 0.000308957676173.
+2017-06-27 22:12:46,850 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 203)
+2017-06-27 22:12:46,854 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 203, learning rate is 0.000307166420915.
+2017-06-27 22:15:27,303 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 204)
+2017-06-27 22:15:27,306 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 204, learning rate is 0.000305385550883.
+2017-06-27 22:18:08,379 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 205)
+2017-06-27 22:18:08,383 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 205, learning rate is 0.000303615005867.
+2017-06-27 22:20:48,764 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 206)
+2017-06-27 22:20:48,767 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 206, learning rate is 0.000301854726005.
+2017-06-27 22:23:30,506 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 207)
+2017-06-27 22:23:30,510 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 207, learning rate is 0.000300104651782.
+2017-06-27 22:26:13,698 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 208)
+2017-06-27 22:26:13,703 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 208, learning rate is 0.000298364724028.
+2017-06-27 22:28:56,911 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 209)
+2017-06-27 22:28:56,915 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 209, learning rate is 0.000296634883918.
+2017-06-27 22:31:35,215 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 210)
+2017-06-27 22:31:35,218 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 210, learning rate is 0.000294915072965.
+2017-06-27 22:34:19,201 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 211)
+2017-06-27 22:34:19,205 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 211, learning rate is 0.000293205233023.
+2017-06-27 22:37:03,628 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 212)
+2017-06-27 22:37:03,632 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 212, learning rate is 0.000291505306283.
+2017-06-27 22:39:44,803 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 213)
+2017-06-27 22:39:44,806 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 213, learning rate is 0.00028981523527.
+2017-06-27 22:42:21,088 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 214)
+2017-06-27 22:42:21,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 214, learning rate is 0.000288134962844.
+2017-06-27 22:45:04,216 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 215)
+2017-06-27 22:45:04,219 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 215, learning rate is 0.000286464432195.
+2017-06-27 22:47:47,179 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 216)
+2017-06-27 22:47:47,185 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 216, learning rate is 0.000284803586844.
+2017-06-27 22:50:28,969 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 217)
+2017-06-27 22:50:28,973 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 217, learning rate is 0.000283152370636.
+2017-06-27 22:53:12,550 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 218)
+2017-06-27 22:53:12,554 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 218, learning rate is 0.000281510727745.
+2017-06-27 22:55:52,088 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 219)
+2017-06-27 22:55:52,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 219, learning rate is 0.000279878602667.
+2017-06-27 22:58:35,284 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 220)
+2017-06-27 22:58:35,288 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 220, learning rate is 0.000278255940221.
+2017-06-27 23:02:05,524 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 221)
+2017-06-27 23:02:05,527 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 221, learning rate is 0.000276642685544.
+2017-06-27 23:04:45,662 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 222)
+2017-06-27 23:04:45,666 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 222, learning rate is 0.000275038784093.
+2017-06-27 23:07:27,441 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 223)
+2017-06-27 23:07:27,445 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 223, learning rate is 0.000273444181641.
+2017-06-27 23:10:09,673 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 224)
+2017-06-27 23:10:09,677 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 224, learning rate is 0.000271858824273.
+2017-06-27 23:12:49,684 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 225)
+2017-06-27 23:12:49,688 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 225, learning rate is 0.000270282658391.
+2017-06-27 23:15:29,915 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 226)
+2017-06-27 23:15:29,919 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 226, learning rate is 0.000268715630703.
+2017-06-27 23:18:13,859 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 227)
+2017-06-27 23:18:13,863 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 227, learning rate is 0.000267157688228.
+2017-06-27 23:20:54,984 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 228)
+2017-06-27 23:20:54,988 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 228, learning rate is 0.000265608778295.
+2017-06-27 23:23:36,944 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 229)
+2017-06-27 23:23:36,948 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 229, learning rate is 0.000264068848533.
+2017-06-27 23:26:21,592 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 230)
+2017-06-27 23:26:21,596 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 230, learning rate is 0.000262537846878.
+2017-06-27 23:29:03,356 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 231)
+2017-06-27 23:29:03,360 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 231, learning rate is 0.000261015721568.
+2017-06-27 23:31:48,621 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 232)
+2017-06-27 23:31:48,625 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 232, learning rate is 0.00025950242114.
+2017-06-27 23:34:32,185 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 233)
+2017-06-27 23:34:32,188 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 233, learning rate is 0.000257997894429.
+2017-06-27 23:37:13,968 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 234)
+2017-06-27 23:37:13,972 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 234, learning rate is 0.000256502090568.
+2017-06-27 23:39:57,040 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 235)
+2017-06-27 23:39:57,043 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 235, learning rate is 0.000255014958984.
+2017-06-27 23:42:38,210 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 236)
+2017-06-27 23:42:38,213 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 236, learning rate is 0.000253536449397.
+2017-06-27 23:45:18,676 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 237)
+2017-06-27 23:45:18,681 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 237, learning rate is 0.000252066511819.
+2017-06-27 23:48:01,394 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 238)
+2017-06-27 23:48:01,398 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 238, learning rate is 0.000250605096553.
+2017-06-27 23:50:40,308 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 239)
+2017-06-27 23:50:40,312 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 239, learning rate is 0.000249152154187.
+2017-06-27 23:53:22,582 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 240)
+2017-06-27 23:53:22,586 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 240, learning rate is 0.000247707635599.
+2017-06-27 23:56:56,957 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 241)
+2017-06-27 23:56:56,960 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 241, learning rate is 0.000246271491949.
+2017-06-27 23:59:37,144 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 242)
+2017-06-27 23:59:37,148 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 242, learning rate is 0.000244843674682.
+2017-06-28 00:02:15,629 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 243)
+2017-06-28 00:02:15,633 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 243, learning rate is 0.000243424135524.
+2017-06-28 00:05:01,117 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 244)
+2017-06-28 00:05:01,123 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 244, learning rate is 0.000242012826479.
+2017-06-28 00:07:43,172 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 245)
+2017-06-28 00:07:43,176 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 245, learning rate is 0.000240609699833.
+2017-06-28 00:10:24,484 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 246)
+2017-06-28 00:10:24,489 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 246, learning rate is 0.000239214708146.
+2017-06-28 00:13:03,204 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 247)
+2017-06-28 00:13:03,208 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 247, learning rate is 0.000237827804254.
+2017-06-28 00:15:45,442 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 248)
+2017-06-28 00:15:45,446 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 248, learning rate is 0.000236448941265.
+2017-06-28 00:18:28,810 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 249)
+2017-06-28 00:18:28,814 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 249, learning rate is 0.00023507807256.
+2017-06-28 00:21:14,030 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 250)
+2017-06-28 00:21:14,034 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 250, learning rate is 0.000233715151791.
+2017-06-28 00:23:56,652 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 251)
+2017-06-28 00:23:56,656 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 251, learning rate is 0.000232360132878.
+2017-06-28 00:26:37,150 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 252)
+2017-06-28 00:26:37,154 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 252, learning rate is 0.000231012970008.
+2017-06-28 00:29:22,940 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 253)
+2017-06-28 00:29:22,944 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 253, learning rate is 0.000229673617634.
+2017-06-28 00:32:03,441 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 254)
+2017-06-28 00:32:03,445 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 254, learning rate is 0.000228342030472.
+2017-06-28 00:34:44,815 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 255)
+2017-06-28 00:34:44,819 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 255, learning rate is 0.000227018163502.
+2017-06-28 00:37:29,306 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 256)
+2017-06-28 00:37:29,310 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 256, learning rate is 0.000225701971963.
+2017-06-28 00:40:10,418 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 257)
+2017-06-28 00:40:10,423 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 257, learning rate is 0.000224393411357.
+2017-06-28 00:42:51,049 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 258)
+2017-06-28 00:42:51,052 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 258, learning rate is 0.000223092437441.
+2017-06-28 00:45:33,802 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 259)
+2017-06-28 00:45:33,805 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 259, learning rate is 0.000221799006229.
+2017-06-28 00:48:15,908 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 260)
+2017-06-28 00:48:15,912 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 260, learning rate is 0.00022051307399.
+2017-06-28 00:51:46,416 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 261)
+2017-06-28 00:51:46,419 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 261, learning rate is 0.000219234597248.
+2017-06-28 00:54:29,844 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 262)
+2017-06-28 00:54:29,853 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 262, learning rate is 0.000217963532778.
+2017-06-28 00:57:12,260 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 263)
+2017-06-28 00:57:12,264 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 263, learning rate is 0.000216699837605.
+2017-06-28 00:59:54,971 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 264)
+2017-06-28 00:59:54,978 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 264, learning rate is 0.000215443469003.
+2017-06-28 01:02:37,945 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 265)
+2017-06-28 01:02:37,949 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 265, learning rate is 0.000214194384496.
+2017-06-28 01:05:21,031 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 266)
+2017-06-28 01:05:21,037 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 266, learning rate is 0.000212952541852.
+2017-06-28 01:08:04,760 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 267)
+2017-06-28 01:08:04,765 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 267, learning rate is 0.000211717899085.
+2017-06-28 01:10:46,659 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 268)
+2017-06-28 01:10:46,663 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 268, learning rate is 0.000210490414451.
+2017-06-28 01:13:28,464 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 269)
+2017-06-28 01:13:28,468 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 269, learning rate is 0.00020927004645.
+2017-06-28 01:16:11,810 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 270)
+2017-06-28 01:16:11,813 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 270, learning rate is 0.000208056753822.
+2017-06-28 01:18:52,699 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 271)
+2017-06-28 01:18:52,703 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 271, learning rate is 0.000206850495544.
+2017-06-28 01:21:31,908 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 272)
+2017-06-28 01:21:31,912 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 272, learning rate is 0.000205651230835.
+2017-06-28 01:24:16,488 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 273)
+2017-06-28 01:24:16,493 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 273, learning rate is 0.000204458919146.
+2017-06-28 01:26:59,573 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 274)
+2017-06-28 01:26:59,577 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 274, learning rate is 0.000203273520167.
+2017-06-28 01:29:41,424 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 275)
+2017-06-28 01:29:41,428 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 275, learning rate is 0.000202094993819.
+2017-06-28 01:32:22,675 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 276)
+2017-06-28 01:32:22,679 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 276, learning rate is 0.000200923300257.
+2017-06-28 01:35:06,893 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 277)
+2017-06-28 01:35:06,897 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 277, learning rate is 0.000199758399865.
+2017-06-28 01:37:49,317 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 278)
+2017-06-28 01:37:49,322 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 278, learning rate is 0.000198600253259.
+2017-06-28 01:40:33,338 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 279)
+2017-06-28 01:40:33,342 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 279, learning rate is 0.000197448821282.
+2017-06-28 01:43:10,008 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 280)
+2017-06-28 01:43:10,012 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 280, learning rate is 0.000196304065004.
+2017-06-28 01:46:40,309 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 281)
+2017-06-28 01:46:40,312 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 281, learning rate is 0.000195165945722.
+2017-06-28 01:49:25,088 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 282)
+2017-06-28 01:49:25,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 282, learning rate is 0.000194034424956.
+2017-06-28 01:52:08,075 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 283)
+2017-06-28 01:52:08,080 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 283, learning rate is 0.000192909464449.
+2017-06-28 01:54:50,047 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 284)
+2017-06-28 01:54:50,050 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 284, learning rate is 0.000191791026167.
+2017-06-28 01:57:32,092 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 285)
+2017-06-28 01:57:32,096 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 285, learning rate is 0.000190679072296.
+2017-06-28 02:00:15,526 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 286)
+2017-06-28 02:00:15,530 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 286, learning rate is 0.000189573565241.
+2017-06-28 02:02:55,887 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 287)
+2017-06-28 02:02:55,891 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 287, learning rate is 0.000188474467624.
+2017-06-28 02:05:39,996 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 288)
+2017-06-28 02:05:40,000 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 288, learning rate is 0.000187381742286.
+2017-06-28 02:08:23,005 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 289)
+2017-06-28 02:08:23,010 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 289, learning rate is 0.000186295352282.
+2017-06-28 02:11:04,009 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 290)
+2017-06-28 02:11:04,014 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 290, learning rate is 0.000185215260881.
+2017-06-28 02:13:47,551 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 291)
+2017-06-28 02:13:47,554 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 291, learning rate is 0.000184141431565.
+2017-06-28 02:16:28,158 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 292)
+2017-06-28 02:16:28,163 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 292, learning rate is 0.00018307382803.
+2017-06-28 02:19:10,528 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 293)
+2017-06-28 02:19:10,532 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 293, learning rate is 0.000182012414178.
+2017-06-28 02:21:54,349 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 294)
+2017-06-28 02:21:54,353 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 294, learning rate is 0.000180957154124.
+2017-06-28 02:24:36,677 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 295)
+2017-06-28 02:24:36,681 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 295, learning rate is 0.000179908012191.
+2017-06-28 02:27:19,572 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 296)
+2017-06-28 02:27:19,577 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 296, learning rate is 0.000178864952906.
+2017-06-28 02:30:04,036 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 297)
+2017-06-28 02:30:04,040 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 297, learning rate is 0.000177827941004.
+2017-06-28 02:32:47,347 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 298)
+2017-06-28 02:32:47,351 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 298, learning rate is 0.000176796941424.
+2017-06-28 02:35:32,205 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 299)
+2017-06-28 02:35:32,210 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 299, learning rate is 0.000175771919308.
+2017-06-28 02:38:13,910 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 300)
+2017-06-28 02:38:13,914 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 300, learning rate is 0.000174752840001.
+2017-06-28 02:41:43,880 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 301)
+2017-06-28 02:41:43,883 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 301, learning rate is 0.000173739669047.
+2017-06-28 02:44:26,914 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 302)
+2017-06-28 02:44:26,922 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 302, learning rate is 0.000172732372191.
+2017-06-28 02:47:08,426 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 303)
+2017-06-28 02:47:08,429 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 303, learning rate is 0.000171730915378.
+2017-06-28 02:49:49,697 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 304)
+2017-06-28 02:49:49,701 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 304, learning rate is 0.000170735264747.
+2017-06-28 02:52:31,073 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 305)
+2017-06-28 02:52:31,076 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 305, learning rate is 0.000169745386637.
+2017-06-28 02:55:13,393 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 306)
+2017-06-28 02:55:13,397 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 306, learning rate is 0.000168761247579.
+2017-06-28 02:57:57,471 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 307)
+2017-06-28 02:57:57,475 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 307, learning rate is 0.0001677828143.
+2017-06-28 03:00:41,429 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 308)
+2017-06-28 03:00:41,433 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 308, learning rate is 0.00016681005372.
+2017-06-28 03:03:21,894 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 309)
+2017-06-28 03:03:21,898 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 309, learning rate is 0.00016584293295.
+2017-06-28 03:06:05,821 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 310)
+2017-06-28 03:06:05,824 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 310, learning rate is 0.000164881419291.
+2017-06-28 03:08:50,388 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 311)
+2017-06-28 03:08:50,393 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 311, learning rate is 0.000163925480235.
+2017-06-28 03:11:32,162 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 312)
+2017-06-28 03:11:32,167 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 312, learning rate is 0.000162975083462.
+2017-06-28 03:14:08,936 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 313)
+2017-06-28 03:14:08,941 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 313, learning rate is 0.000162030196839.
+2017-06-28 03:16:52,278 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 314)
+2017-06-28 03:16:52,282 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 314, learning rate is 0.000161090788421.
+2017-06-28 03:19:35,147 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 315)
+2017-06-28 03:19:35,154 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 315, learning rate is 0.000160156826445.
+2017-06-28 03:22:17,491 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 316)
+2017-06-28 03:22:17,496 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 316, learning rate is 0.000159228279334.
+2017-06-28 03:25:01,632 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 317)
+2017-06-28 03:25:01,636 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 317, learning rate is 0.000158305115695.
+2017-06-28 03:27:41,012 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 318)
+2017-06-28 03:27:41,016 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 318, learning rate is 0.000157387304316.
+2017-06-28 03:30:24,796 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 319)
+2017-06-28 03:30:24,800 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 319, learning rate is 0.000156474814166.
+2017-06-28 03:33:06,965 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 320)
+2017-06-28 03:33:06,968 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 320, learning rate is 0.000155567614393.
+2017-06-28 03:36:37,917 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 321)
+2017-06-28 03:36:37,921 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 321, learning rate is 0.000154665674326.
+2017-06-28 03:39:19,339 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 322)
+2017-06-28 03:39:19,344 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 322, learning rate is 0.000153768963469.
+2017-06-28 03:42:01,688 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 323)
+2017-06-28 03:42:01,692 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 323, learning rate is 0.000152877451507.
+2017-06-28 03:44:42,333 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 324)
+2017-06-28 03:44:42,337 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 324, learning rate is 0.000151991108295.
+2017-06-28 03:47:22,255 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 325)
+2017-06-28 03:47:22,259 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 325, learning rate is 0.000151109903869.
+2017-06-28 03:50:06,131 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 326)
+2017-06-28 03:50:06,135 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 326, learning rate is 0.000150233808433.
+2017-06-28 03:52:47,249 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 327)
+2017-06-28 03:52:47,253 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 327, learning rate is 0.000149362792368.
+2017-06-28 03:55:29,213 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 328)
+2017-06-28 03:55:29,217 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 328, learning rate is 0.000148496826225.
+2017-06-28 03:58:13,506 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 329)
+2017-06-28 03:58:13,510 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 329, learning rate is 0.000147635880726.
+2017-06-28 04:00:55,310 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 330)
+2017-06-28 04:00:55,314 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 330, learning rate is 0.000146779926762.
+2017-06-28 04:03:40,073 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 331)
+2017-06-28 04:03:40,077 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 331, learning rate is 0.000145928935394.
+2017-06-28 04:06:22,491 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 332)
+2017-06-28 04:06:22,497 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 332, learning rate is 0.00014508287785.
+2017-06-28 04:09:03,836 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 333)
+2017-06-28 04:09:03,839 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 333, learning rate is 0.000144241725524.
+2017-06-28 04:11:47,463 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 334)
+2017-06-28 04:11:47,469 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 334, learning rate is 0.000143405449978.
+2017-06-28 04:14:29,046 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 335)
+2017-06-28 04:14:29,050 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 335, learning rate is 0.000142574022938.
+2017-06-28 04:17:09,240 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 336)
+2017-06-28 04:17:09,243 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 336, learning rate is 0.000141747416293.
+2017-06-28 04:19:52,341 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 337)
+2017-06-28 04:19:52,345 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 337, learning rate is 0.000140925602095.
+2017-06-28 04:22:30,657 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 338)
+2017-06-28 04:22:30,662 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 338, learning rate is 0.00014010855256.
+2017-06-28 04:25:13,550 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 339)
+2017-06-28 04:25:13,555 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 339, learning rate is 0.000139296240063.
+2017-06-28 04:27:58,907 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 340)
+2017-06-28 04:27:58,910 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 340, learning rate is 0.000138488637139.
+2017-06-28 04:31:29,818 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 341)
+2017-06-28 04:31:29,822 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 341, learning rate is 0.000137685716485.
+2017-06-28 04:34:08,440 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 342)
+2017-06-28 04:34:08,444 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 342, learning rate is 0.000136887450954.
+2017-06-28 04:36:53,986 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 343)
+2017-06-28 04:36:53,990 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 343, learning rate is 0.000136093813556.
+2017-06-28 04:39:35,782 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 344)
+2017-06-28 04:39:35,786 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 344, learning rate is 0.000135304777458.
+2017-06-28 04:42:17,005 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 345)
+2017-06-28 04:42:17,009 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 345, learning rate is 0.000134520315984.
+2017-06-28 04:44:55,503 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 346)
+2017-06-28 04:44:55,507 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 346, learning rate is 0.000133740402611.
+2017-06-28 04:47:36,847 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 347)
+2017-06-28 04:47:36,851 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 347, learning rate is 0.000132965010971.
+2017-06-28 04:50:19,641 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 348)
+2017-06-28 04:50:19,645 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 348, learning rate is 0.000132194114847.
+2017-06-28 04:53:04,493 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 349)
+2017-06-28 04:53:04,496 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 349, learning rate is 0.000131427688175.
+2017-06-28 04:55:46,567 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 350)
+2017-06-28 04:55:46,574 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 350, learning rate is 0.000130665705044.
+2017-06-28 04:58:26,105 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 351)
+2017-06-28 04:58:26,109 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 351, learning rate is 0.000129908139691.
+2017-06-28 05:01:11,451 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 352)
+2017-06-28 05:01:11,455 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 352, learning rate is 0.000129154966501.
+2017-06-28 05:03:51,167 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 353)
+2017-06-28 05:03:51,171 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 353, learning rate is 0.000128406160012.
+2017-06-28 05:06:32,433 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 354)
+2017-06-28 05:06:32,437 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 354, learning rate is 0.000127661694906.
+2017-06-28 05:09:16,560 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 355)
+2017-06-28 05:09:16,565 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 355, learning rate is 0.000126921546012.
+2017-06-28 05:11:57,001 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 356)
+2017-06-28 05:11:57,005 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 356, learning rate is 0.000126185688307.
+2017-06-28 05:14:37,760 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 357)
+2017-06-28 05:14:37,764 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 357, learning rate is 0.00012545409691.
+2017-06-28 05:17:19,728 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 358)
+2017-06-28 05:17:19,732 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 358, learning rate is 0.000124726747089.
+2017-06-28 05:20:01,613 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 359)
+2017-06-28 05:20:01,618 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 359, learning rate is 0.00012400361425.
+2017-06-28 05:22:44,120 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 360)
+2017-06-28 05:22:44,124 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 360, learning rate is 0.000123284673944.
+2017-06-28 05:26:17,541 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 361)
+2017-06-28 05:26:17,545 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 361, learning rate is 0.000122569901866.
+2017-06-28 05:28:59,755 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 362)
+2017-06-28 05:28:59,759 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 362, learning rate is 0.000121859273847.
+2017-06-28 05:31:41,628 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 363)
+2017-06-28 05:31:41,633 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 363, learning rate is 0.000121152765863.
+2017-06-28 05:34:24,715 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 364)
+2017-06-28 05:34:24,718 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 364, learning rate is 0.000120450354026.
+2017-06-28 05:37:07,654 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 365)
+2017-06-28 05:37:07,658 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 365, learning rate is 0.000119752014588.
+2017-06-28 05:39:50,905 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 366)
+2017-06-28 05:39:50,909 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 366, learning rate is 0.000119057723938.
+2017-06-28 05:42:32,627 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 367)
+2017-06-28 05:42:32,631 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 367, learning rate is 0.000118367458602.
+2017-06-28 05:45:13,976 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 368)
+2017-06-28 05:45:13,980 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 368, learning rate is 0.000117681195243.
+2017-06-28 05:47:57,000 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 369)
+2017-06-28 05:47:57,004 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 369, learning rate is 0.000116998910659.
+2017-06-28 05:50:37,569 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 370)
+2017-06-28 05:50:37,573 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 370, learning rate is 0.000116320581781.
+2017-06-28 05:53:16,587 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 371)
+2017-06-28 05:53:16,592 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 371, learning rate is 0.000115646185675.
+2017-06-28 05:56:00,648 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 372)
+2017-06-28 05:56:00,654 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 372, learning rate is 0.00011497569954.
+2017-06-28 05:58:44,001 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 373)
+2017-06-28 05:58:44,005 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 373, learning rate is 0.000114309100707.
+2017-06-28 06:01:25,102 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 374)
+2017-06-28 06:01:25,106 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 374, learning rate is 0.000113646366639.
+2017-06-28 06:04:06,284 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 375)
+2017-06-28 06:04:06,288 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 375, learning rate is 0.000112987474928.
+2017-06-28 06:06:49,717 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 376)
+2017-06-28 06:06:49,721 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 376, learning rate is 0.000112332403298.
+2017-06-28 06:09:31,386 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 377)
+2017-06-28 06:09:31,390 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 377, learning rate is 0.000111681129601.
+2017-06-28 06:12:14,543 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 378)
+2017-06-28 06:12:14,548 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 378, learning rate is 0.000111033631817.
+2017-06-28 06:14:50,516 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 379)
+2017-06-28 06:14:50,521 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 379, learning rate is 0.000110389888055.
+2017-06-28 06:17:32,519 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 380)
+2017-06-28 06:17:32,527 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 380, learning rate is 0.000109749876549.
+2017-06-28 06:21:07,077 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 381)
+2017-06-28 06:21:07,080 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 381, learning rate is 0.000109113575662.
+2017-06-28 06:23:48,625 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 382)
+2017-06-28 06:23:48,629 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 382, learning rate is 0.00010848096388.
+2017-06-28 06:26:30,599 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 383)
+2017-06-28 06:26:30,603 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 383, learning rate is 0.000107852019815.
+2017-06-28 06:29:11,787 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 384)
+2017-06-28 06:29:11,791 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 384, learning rate is 0.000107226722201.
+2017-06-28 06:31:54,655 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 385)
+2017-06-28 06:31:54,660 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 385, learning rate is 0.000106605049898.
+2017-06-28 06:34:34,813 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 386)
+2017-06-28 06:34:34,817 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 386, learning rate is 0.000105986981888.
+2017-06-28 06:37:18,151 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 387)
+2017-06-28 06:37:18,155 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 387, learning rate is 0.000105372497274.
+2017-06-28 06:40:00,091 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 388)
+2017-06-28 06:40:00,095 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 388, learning rate is 0.000104761575279.
+2017-06-28 06:42:40,687 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 389)
+2017-06-28 06:42:40,691 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 389, learning rate is 0.000104154195249.
+2017-06-28 06:45:23,212 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 390)
+2017-06-28 06:45:23,218 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 390, learning rate is 0.000103550336649.
+2017-06-28 06:48:03,511 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 391)
+2017-06-28 06:48:03,514 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 391, learning rate is 0.000102949979062.
+2017-06-28 06:50:45,304 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 392)
+2017-06-28 06:50:45,308 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 392, learning rate is 0.00010235310219.
+2017-06-28 06:53:28,864 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 393)
+2017-06-28 06:53:28,869 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 393, learning rate is 0.000101759685853.
+2017-06-28 06:56:11,253 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 394)
+2017-06-28 06:56:11,256 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 394, learning rate is 0.000101169709988.
+2017-06-28 06:58:53,503 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:238 - train_one_iteration - INFO ] Training neural net (pass 395)
+2017-06-28 06:58:53,507 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:296 - train_one_iteration - INFO ] On iteration 395, learning rate is 0.0001.
+2017-06-28 07:01:36,832 [steps/nnet3/chain/train.py:495 - train - INFO ] Doing final combination to produce final.mdl
+2017-06-28 07:01:36,833 [steps/libs/nnet3/train/chain_objf/acoustic_model.py:498 - combine_models - INFO ] Combining set([385, 387, 389, 391, 393, 395, 396, 347, 349, 351, 353, 355, 357, 359, 361, 363, 365, 367, 369, 371, 373, 375, 377, 379, 381, 383]) models.
+2017-06-28 07:14:43,698 [steps/nnet3/chain/train.py:510 - train - INFO ] Cleaning up the experiment directory /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector
+/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector: num-iters=396 nj=1..1 num-params=49.6M dim=40->4211 combine=-0.03->-0.03
+steps/nnet3/chain/train.py --stage -10 --cmd run.pl --feat.cmvn-opts --norm-means=false --norm-vars=false --chain.xent-regularize 0.025 --chain.leaky-hmm-coefficient 0.1 --chain.l2-regularize 0.00005 --chain.apply-deriv-weights false --chain.lm-opts=--num-extra-lm-states=2000 --trainer.num-chunk-per-minibatch 32 --trainer.frames-per-iter 1200000 --trainer.max-param-change 2.0 --trainer.num-epochs 4 --trainer.optimization.shrink-value 0.99 --trainer.optimization.num-jobs-initial 1 --trainer.optimization.num-jobs-final 1 --trainer.optimization.initial-effective-lrate 0.001 --trainer.optimization.final-effective-lrate 0.0001 --trainer.optimization.momentum 0.0 --trainer.deriv-truncate-margin 8 --egs.stage -10 --egs.opts --frames-overlap-per-eg 0 --egs.chunk-width 150 --egs.chunk-left-context 40 --egs.chunk-right-context 40 --trainer.dropout-schedule 0,0@0.20,0.1@0.50,0 --egs.dir  --cleanup.remove-egs false --feat-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy --tree-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tri5_7d_tree_sp --lat-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp --dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector
+['steps/nnet3/chain/train.py', '--stage', '-10', '--cmd', 'run.pl', '--feat.cmvn-opts', '--norm-means=false --norm-vars=false', '--chain.xent-regularize', '0.025', '--chain.leaky-hmm-coefficient', '0.1', '--chain.l2-regularize', '0.00005', '--chain.apply-deriv-weights', 'false', '--chain.lm-opts=--num-extra-lm-states=2000', '--trainer.num-chunk-per-minibatch', '32', '--trainer.frames-per-iter', '1200000', '--trainer.max-param-change', '2.0', '--trainer.num-epochs', '4', '--trainer.optimization.shrink-value', '0.99', '--trainer.optimization.num-jobs-initial', '1', '--trainer.optimization.num-jobs-final', '1', '--trainer.optimization.initial-effective-lrate', '0.001', '--trainer.optimization.final-effective-lrate', '0.0001', '--trainer.optimization.momentum', '0.0', '--trainer.deriv-truncate-margin', '8', '--egs.stage', '-10', '--egs.opts', '--frames-overlap-per-eg 0', '--egs.chunk-width', '150', '--egs.chunk-left-context', '40', '--egs.chunk-right-context', '40', '--trainer.dropout-schedule', '0,0@0.20,0.1@0.50,0', '--egs.dir', '', '--cleanup.remove-egs', 'false', '--feat-dir', '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy', '--tree-dir', '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tri5_7d_tree_sp', '--lat-dir', '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_lats_nodup_sp', '--dir', '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector']
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/tree 
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/tree 
+make-h-transducer --disambig-syms-out=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg/disambig_tid.int --transition-scale=1.0 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data/lang_test_tgpr_5k/tmp/ilabels_2_1 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/tree /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/final.mdl 
+fstrmepslocal 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+fsttablecompose /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg/Ha.fst /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data/lang_test_tgpr_5k/tmp/CLG_2_1.fst 
+fstrmsymbols /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg/disambig_tid.int 
+fstisstochastic /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg/HCLGa.fst 
+-0.113281 -0.397801
+HCLGa is not stochastic
+add-self-loops --self-loop-scale=1.0 --reorder=true /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/final.mdl 
+fstisstochastic /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg/HCLG.fst 
+1.90465e-09 -0.292007
+[info]: final HCLG is not stochastic.
+steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 --cmd run.pl --extra-left-context 50 --extra-right-context 50 --frames-per-chunk 150 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_simu_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_simu_beamformit_5mics_sw1_tg
+steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 --cmd run.pl --extra-left-context 50 --extra-right-context 50 --frames-per-chunk 150 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/dt05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_real_beamformit_5mics_sw1_tg
+steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 --cmd run.pl --extra-left-context 50 --extra-right-context 50 --frames-per-chunk 150 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/dt05_simu_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_simu_beamformit_5mics_sw1_tg
+steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 --cmd run.pl --extra-left-context 50 --extra-right-context 50 --frames-per-chunk 150 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_real_beamformit_5mics_sw1_tg
+steps/nnet3/decode.sh: feature type is raw
+steps/nnet3/decode.sh: feature type is raw
+steps/nnet3/decode.sh: feature type is raw
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --iter final /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_real_beamformit_5mics_sw1_tg
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_real_beamformit_5mics_sw1_tg/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,3,22) and mean=11.1
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_real_beamformit_5mics_sw1_tg/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_real_beamformit_5mics_sw1_tg
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/diagnostic/analyze_lats.sh --cmd run.pl --iter final /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_simu_beamformit_5mics_sw1_tg
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_simu_beamformit_5mics_sw1_tg/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,2,20) and mean=10.4
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_simu_beamformit_5mics_sw1_tg/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_simu_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_et05_simu_beamformit_5mics_sw1_tg
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/diagnostic/analyze_lats.sh --cmd run.pl --iter final /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_simu_beamformit_5mics_sw1_tg
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_simu_beamformit_5mics_sw1_tg/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,2,14) and mean=7.4
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_simu_beamformit_5mics_sw1_tg/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/dt05_simu_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_simu_beamformit_5mics_sw1_tg
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/diagnostic/analyze_lats.sh --cmd run.pl --iter final /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_real_beamformit_5mics_sw1_tg
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_real_beamformit_5mics_sw1_tg/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,2,14) and mean=7.1
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_real_beamformit_5mics_sw1_tg/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/dt05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/graph_sw1_tg /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_3layers_dropout1_sp_noIvector/decode2_dt05_real_beamformit_5mics_sw1_tg
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

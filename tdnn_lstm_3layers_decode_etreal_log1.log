@@ -1,0 +1,11 @@
+steps/nnet3/decode.sh --extra-left-context 40 --extra-right-context 0 --extra-left-context-initial 0 --extra-right-context-final 0 --frames-per-chunk 40 --nj 4 --cmd run.pl --num-threads 4 --online-ivector-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_et05_real_beamformit_5mics_fmllr /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri4a_dnn_tr05_multi_noisy/graph_tgpr_5k /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn1a_sp/decode_graph_tgpr_5k_et05_real_beamformit_5mics
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --iter final /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri4a_dnn_tr05_multi_noisy/graph_tgpr_5k /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn1a_sp/decode_graph_tgpr_5k_et05_real_beamformit_5mics
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn1a_sp/decode_graph_tgpr_5k_et05_real_beamformit_5mics/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,2,11) and mean=5.0
+steps/diagnostic/analyze_lats.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn1a_sp/decode_graph_tgpr_5k_et05_real_beamformit_5mics/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/et05_real_beamformit_5mics /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri4a_dnn_tr05_multi_noisy/graph_tgpr_5k /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn1a_sp/decode_graph_tgpr_5k_et05_real_beamformit_5mics
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.

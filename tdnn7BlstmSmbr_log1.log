@@ -1,0 +1,52 @@
+steps/nnet3/align.sh --cmd run.pl --use-gpu false --frames-per-chunk 200 --extra-left-context 40 --extra-right-context 40 --extra-left-context-initial 0 --extra-right-context-final 0 --online-ivector-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr --nj 7 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data/lang /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_ali
+steps/nnet3/align.sh: feature type is raw
+steps/nnet3/align.sh: aligning data in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy using model from /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp, putting alignments in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_ali
+steps/nnet3/align.sh: frame-subsampling-factor is not 1 (so likely a chain system),
+...  but the scale opts are the defaults.  You probably want
+--scale-opts '--transition-scale=1.0 --acoustic-scale=1.0 --self-loop-scale=1.0'
+steps/diagnostic/analyze_alignments.sh --cmd run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data/lang /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_ali
+steps/diagnostic/analyze_alignments.sh: see stats in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_ali/log/analyze_alignments.log
+steps/nnet3/align.sh: done aligning data.
+steps/nnet3/get_degs.sh --cmd run.pl --mem 10G --num-threads 3 --max-copy-jobs 5 --extra-left-context 40 --extra-right-context 40 --extra-left-context-initial 0 --extra-right-context-final 0 --frames-per-chunk-decoding 200 --stage 0 --online-ivector-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr --frames-per-eg 300,280,150,120,100 --frames-overlap-per-eg 0 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data/lang /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_ali /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs
+steps/nnet3/get_degs.sh: feature type is raw
+steps/nnet3/get_degs.sh: warning: frame_subsampling_factor is not 1 (so likely a chain system),
+...  but self-loop-scale is 0.1.  Make sure this is not a mistake.
+steps/nnet3/get_degs.sh: Making unigram grammar FST in /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang
+cat: data/lang/oov.txt: No such file or directory
+the --map-oov option requires an argument at utils/sym2int.pl line 27.
+Illegal division by zero at utils/make_unigram_grammar.pl line 51.
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp/tree 
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp/tree 
+utils/mkgraph.sh: WARNING: chain models need '--self-loop-scale 1.0'
+fstpushspecial 
+fstdeterminizestar --use-log=true 
+fstminimizeencoded 
+fsttablecompose /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/L_disambig.fst /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/G.fst 
+fstisstochastic /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/LG.fst 
+0 0
+fstcomposecontext --context-size=2 --central-position=1 --read-disambig-syms=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/phones/disambig.int --write-disambig-syms=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/disambig_ilabels_2_1.int /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/ilabels_2_1.21826 
+WARNING (fstcomposecontext[5.1.0-]:ContextFstImpl():fstext/context-fst-inl.h:105) Context FST created but there are no phone symbols: probably input FST was empty.
+fstisstochastic /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/CLG_2_1.fst 
+0 0
+make-h-transducer --disambig-syms-out=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/dengraph/disambig_tid.int --transition-scale=1.0 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/ilabels_2_1 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp/tree /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp/final.mdl 
+fstminimizeencoded 
+fsttablecompose /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/dengraph/Ha.fst /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/lang/tmp/CLG_2_1.fst 
+fstdeterminizestar --use-log=true 
+fstrmepslocal 
+fstrmsymbols /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/dengraph/disambig_tid.int 
+fstisstochastic /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp_degs/dengraph/HCLGa.fst 
+0 0
+add-self-loops --self-loop-scale=0.1 --reorder=true /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn_blstm_1a_7layers_sp/final.mdl 
+ASSERTION_FAILED (add-self-loops[5.1.0-]:AddSelfLoops():hmm-utils.cc:564) : 'fst->Start() != fst::kNoStateId' 
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::KaldiAssertFailure_(char const*, char const*, int, char const*)
+kaldi::AddSelfLoops(kaldi::TransitionModel const&, std::vector<int, std::allocator<int> > const&, float, bool, fst::VectorFst<fst::ArcTpl<fst::TropicalWeightTpl<float> >, fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float> >, std::allocator<fst::ArcTpl<fst::TropicalWeightTpl<float> > > > >*)
+main
+__libc_start_main
+add-self-loops() [0x4448a9]
+
+utils/mkgraph.sh: line 144: 21860 Aborted                 add-self-loops --self-loop-scale=$loopscale --reorder=true $model < $dir/HCLGa.fst > $dir/HCLG.fst.$$

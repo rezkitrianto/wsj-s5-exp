@@ -1,0 +1,113 @@
+local/nnet3/run_tdnn_blstm.sh: creating neural net configs using the xconfig parser
+tree-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali/tree 
+nnet3-init /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//init.config /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//init.raw 
+LOG (nnet3-init[5.1.0-]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//init.raw
+nnet3-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//init.raw 
+nnet3-init /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.config /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw 
+LOG (nnet3-init[5.1.0-]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw
+nnet3-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw 
+nnet3-init /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.config /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw 
+LOG (nnet3-init[5.1.0-]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw
+nnet3-info /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs//ref.raw 
+steps/nnet3/xconfig_to_configs.py --xconfig-file /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs/network.xconfig --config-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/configs/
+2017-05-31 12:21:42,305 [steps/nnet3/train_rnn.py:33 - <module> - INFO ] Starting RNN trainer (train_rnn.py)
+2017-05-31 12:21:42,310 [steps/nnet3/train_rnn.py:218 - train - INFO ] Arguments for the experiment
+{'ali_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali',
+ 'chunk_left_context': 40,
+ 'chunk_left_context_initial': 0,
+ 'chunk_right_context': 0,
+ 'chunk_right_context_final': 0,
+ 'chunk_width': '40,30,20',
+ 'cleanup': True,
+ 'cmvn_opts': '--norm-means=false --norm-vars=false',
+ 'combine_sum_to_one_penalty': 0.0,
+ 'command': 'run.pl',
+ 'deriv_truncate_margin': 10,
+ 'dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2',
+ 'dropout_schedule': None,
+ 'egs_command': 'queue.pl',
+ 'egs_dir': None,
+ 'egs_opts': None,
+ 'egs_stage': 0,
+ 'email': None,
+ 'exit_stage': None,
+ 'feat_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy',
+ 'final_effective_lrate': 3e-05,
+ 'initial_effective_lrate': 0.0003,
+ 'lang': '',
+ 'max_lda_jobs': 10,
+ 'max_models_combine': 20,
+ 'max_param_change': 2.0,
+ 'momentum': 0.5,
+ 'num_chunk_per_minibatch': '64,32',
+ 'num_epochs': 5.0,
+ 'num_jobs_compute_prior': 5,
+ 'num_jobs_final': 1,
+ 'num_jobs_initial': 1,
+ 'online_ivector_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr',
+ 'preserve_model_interval': 100,
+ 'presoftmax_prior_scale_power': -0.25,
+ 'prior_subset_size': 20000,
+ 'rand_prune': 4.0,
+ 'remove_egs': True,
+ 'reporting_interval': 0.1,
+ 'samples_per_iter': 20000,
+ 'shrink_saturation_threshold': 0.4,
+ 'shrink_value': 0.99,
+ 'shuffle_buffer_size': 5000,
+ 'srand': 0,
+ 'stage': -10,
+ 'transform_dir': '/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali',
+ 'use_gpu': True}
+2017-05-31 12:21:42,717 [steps/nnet3/train_rnn.py:261 - train - INFO ] Initializing a basic network for estimating preconditioning matrix
+2017-05-31 12:21:42,749 [steps/nnet3/train_rnn.py:271 - train - INFO ] Generating egs
+steps/nnet3/get_egs.sh --cmd run.pl --cmvn-opts --norm-means=false --norm-vars=false --feat-type raw --transform-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali --online-ivector-dir /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr --left-context 40 --right-context 9 --left-context-initial 0 --right-context-final 9 --stage 0 --samples-per-iter 20000 --frames-per-eg 40,30,20 --srand 0 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/egs
+steps/nnet3/get_egs.sh: feature type is raw
+feat-to-dim scp:/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr/ivector_online.scp - 
+steps/nnet3/get_egs.sh: working out number of frames of training data
+feat-to-len 'scp:head -n 10 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy/feats.scp|' ark,t:- 
+steps/nnet3/get_egs.sh: working out feature dim
+steps/nnet3/get_egs.sh: creating 49 archives, each with 19901 egs, with
+steps/nnet3/get_egs.sh:   40,30,20 labels per example, and (left,right) context = (40,9)
+steps/nnet3/get_egs.sh:   ... and (left-context-initial,right-context-final) = (0,9)
+steps/nnet3/get_egs.sh: copying data alignments
+copy-int-vector ark:- ark,scp:/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/egs/ali.ark,/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/egs/ali.scp 
+LOG (copy-int-vector[5.1.0-]:main():copy-int-vector.cc:83) Copied 52153 vectors of int32.
+steps/nnet3/get_egs.sh: Getting validation and training subset examples.
+steps/nnet3/get_egs.sh: ... extracting validation and training-subset alignments.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet3/get_egs.sh: Generating training examples on disk
+steps/nnet3/get_egs.sh: recombining and shuffling order of archives on disk
+steps/nnet3/get_egs.sh: removing temporary archives
+steps/nnet3/get_egs.sh: removing temporary alignments and transforms
+steps/nnet3/get_egs.sh: Finished preparing training examples
+2017-05-31 12:28:59,023 [steps/nnet3/train_rnn.py:318 - train - INFO ] Computing the preconditioning matrix for input features
+2017-05-31 12:29:19,856 [steps/nnet3/train_rnn.py:329 - train - INFO ] Computing initial vector for FixedScaleComponent before softmax, using priors^-0.25 and rescaling to average 1
+2017-05-31 12:29:28,928 [steps/nnet3/train_rnn.py:336 - train - INFO ] Preparing the initial acoustic model.
+2017-05-31 12:29:34,543 [steps/nnet3/train_rnn.py:370 - train - INFO ] Training will run for 5.0 epochs = 245 iterations
+2017-05-31 12:29:34,543 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 0)
+2017-05-31 12:29:34,546 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 0, learning rate is 0.0003 and shrink value is 0.99.
+2017-05-31 12:33:27,466 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 1)
+2017-05-31 12:33:27,469 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 1, learning rate is 0.000297193715865 and shrink value is 0.99.
+2017-05-31 12:36:54,760 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 2)
+2017-05-31 12:36:54,764 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 2, learning rate is 0.000294413682498 and shrink value is 0.99.
+2017-05-31 12:40:21,876 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 3)
+2017-05-31 12:40:21,880 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 3, learning rate is 0.000291659654344 and shrink value is 0.99.
+2017-05-31 12:43:51,214 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 4)
+2017-05-31 12:43:51,218 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 4, learning rate is 0.000288931388141 and shrink value is 0.99.
+2017-05-31 12:47:20,383 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 5)
+2017-05-31 12:47:20,388 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 5, learning rate is 0.000286228642905 and shrink value is 0.99.
+2017-05-31 12:50:47,772 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 6)
+2017-05-31 12:50:47,776 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 6, learning rate is 0.000283551179906 and shrink value is 0.99.
+2017-05-31 12:54:15,004 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 7)
+2017-05-31 12:54:15,008 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 7, learning rate is 0.000280898762647 and shrink value is 0.99.
+2017-05-31 12:57:40,695 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 8)
+2017-05-31 12:57:40,701 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 8, learning rate is 0.000278271156843 and shrink value is 0.99.
+2017-05-31 13:01:06,562 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 9)
+2017-05-31 13:01:06,570 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 9, learning rate is 0.000275668130401 and shrink value is 0.99.
+2017-05-31 13:04:38,007 [steps/libs/nnet3/train/frame_level_objf/common.py:161 - train_one_iteration - INFO ] Training neural net (pass 10)
+2017-05-31 13:04:38,011 [steps/libs/nnet3/train/frame_level_objf/common.py:227 - train_one_iteration - INFO ] On iteration 10, learning rate is 0.000273089453397 and shrink value is 0.99.
+2017-05-31 13:06:34,056 [steps/libs/common.py:176 - background_command_waiter - WARNING ] Command exited with status -2: run.pl /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/log/progress.10.log                     nnet3-info "nnet3-am-copy --raw=true /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/10.mdl - |" '&&'                     nnet3-show-progress --use-gpu=no "nnet3-am-copy --raw=true /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/9.mdl - |" "nnet3-am-copy --raw=true /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/10.mdl - |"                     "ark,bg:nnet3-copy-egs                         ark:/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/egs/train_diagnostic.egs ark:- |                         nnet3-merge-egs --minibatch-size=1:64 ark:-                         ark:- |" 
+2017-05-31 13:06:34,058 [steps/libs/common.py:170 - background_command_waiter - ERROR ] Command exited with status -2: run.pl --gpu 1 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/log/train.10.1.log                     nnet3-train  --read-cache=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/cache.10 --write-cache=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/cache.11                       --print-interval=10                     --momentum=0.5                     --max-param-change=2.0                     --optimization.min-deriv-time=-10 --optimization.max-deriv-time-relative=19 "nnet3-am-copy --raw=true --learning-rate=0.000273089453397 --scale=0.99 /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/10.mdl - |"                     "ark,bg:nnet3-copy-egs  ark:/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/egs/egs.11.ark ark:- |nnet3-shuffle-egs --buffer-size=5000 --srand=10 ark:- ark:- |  nnet3-merge-egs --minibatch-size=64,32  ark:- ark:- |" /home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2/11.1.raw
+steps/nnet3/train_rnn.py --stage=-10 --cmd=run.pl --feat.online-ivector-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr --feat.cmvn-opts=--norm-means=false --norm-vars=false --trainer.srand=0 --trainer.max-param-change=2.0 --trainer.num-epochs=5 --trainer.deriv-truncate-margin=10 --trainer.samples-per-iter=20000 --trainer.optimization.num-jobs-initial=1 --trainer.optimization.num-jobs-final=1 --trainer.optimization.initial-effective-lrate=0.0003 --trainer.optimization.final-effective-lrate=0.00003 --trainer.optimization.shrink-value 0.99 --trainer.rnn.num-chunk-per-minibatch=64,32 --trainer.optimization.momentum=0.5 --egs.chunk-width=40,30,20 --egs.chunk-left-context=40 --egs.chunk-right-context=0 --egs.chunk-left-context-initial=0 --egs.chunk-right-context-final=0 --egs.dir= --cleanup.remove-egs=true --use-gpu=true --feat-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy --ali-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali --lang= --reporting.email= --dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2
+['steps/nnet3/train_rnn.py', '--stage=-10', '--cmd=run.pl', '--feat.online-ivector-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/nnet3/ivectors_tr05_multi_noisy_fmllr', '--feat.cmvn-opts=--norm-means=false --norm-vars=false', '--trainer.srand=0', '--trainer.max-param-change=2.0', '--trainer.num-epochs=5', '--trainer.deriv-truncate-margin=10', '--trainer.samples-per-iter=20000', '--trainer.optimization.num-jobs-initial=1', '--trainer.optimization.num-jobs-final=1', '--trainer.optimization.initial-effective-lrate=0.0003', '--trainer.optimization.final-effective-lrate=0.00003', '--trainer.optimization.shrink-value', '0.99', '--trainer.rnn.num-chunk-per-minibatch=64,32', '--trainer.optimization.momentum=0.5', '--egs.chunk-width=40,30,20', '--egs.chunk-left-context=40', '--egs.chunk-right-context=0', '--egs.chunk-left-context-initial=0', '--egs.chunk-right-context-final=0', '--egs.dir=', '--cleanup.remove-egs=true', '--use-gpu=true', '--feat-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/data-fmllr-tri3b/tr05_multi_noisy', '--ali-dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/tri3b_tr05_multi_noisy_ali', '--lang=', '--reporting.email=', '--dir=/home/rezki/sandbox/kaldi/egs/chime4DevFE1_allChannels3/s5_6ch/exp/chain/tdnn31a_sp_blstm_v2']
